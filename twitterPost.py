@@ -33,8 +33,14 @@ def postOnTwitter(text, listOfPathsToPhoto):
             mediaToUpload = oldAPI.media_upload(path)
             mediaID_list.append(mediaToUpload.media_id)
 
-    # post
-    response = client.create_tweet(text=text, media_ids=mediaID_list)
 
-    # get a return back
-    logging.say(f"From Twitter Post: {response}")
+    # error handling
+    try:
+        # post
+        response = client.create_tweet(text=text, media_ids=mediaID_list)
+        # get a return back
+        logging.say(f"From Twitter Post: {response}")
+
+    except Exception as e:
+        logging.error(f"Error in Twitter Posting {e}")
+
