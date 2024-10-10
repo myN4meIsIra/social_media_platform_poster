@@ -1,22 +1,22 @@
 import tweepy
-import twitter_API_keys
+import API_keys
 
 from loggingAndOutput import Logging
 logging = Logging(True)
 
 
 client = tweepy.Client(
-    consumer_key=twitter_API_keys.API_key,
-    consumer_secret=twitter_API_keys.API_key_secret,
-    access_token=twitter_API_keys.access_token,
-    access_token_secret=twitter_API_keys.access_token_secret
+    consumer_key=API_keys.twitter_API_key,
+    consumer_secret=API_keys.twitter_API_key_secret,
+    access_token=API_keys.twitter_access_token,
+    access_token_secret=API_keys.twitter_access_token_secret
 )
 
 auth = tweepy.OAuth1UserHandler(
-    twitter_API_keys.API_key,
-    twitter_API_keys.API_key_secret,
-    twitter_API_keys.access_token,
-    twitter_API_keys.access_token_secret
+    API_keys.twitter_API_key,
+    API_keys.twitter_API_key_secret,
+    API_keys.twitter_access_token,
+    API_keys.twitter_access_token_secret
 )
 
 
